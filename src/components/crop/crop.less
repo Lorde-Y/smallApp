@@ -1,0 +1,75 @@
+.image-crop {
+	position: relative;
+	width: 1200px;
+	height: 800px;
+	cursor: crosshair;
+}
+.image-crop-mask {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	&.active {
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+}
+.image-crop-show {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.image-crop-selection {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 1px solid red;
+	cursor: move;
+	.handle-resize {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 8px;
+		height: 8px;
+		margin-top: -4px;
+		margin-left: -4px;
+		border-radius: 50%;
+		background: #ff8533;
+	}
+	.origin-nw {
+		cursor: nw-resize;
+	}
+	.origin-n {
+		left: 50%;
+		cursor: n-resize;
+	}
+	.origin-ne {
+		left: 100%;
+		cursor: ne-resize;
+	}
+	.origin-e {
+		top: 50%;
+		left: 100%;
+		cursor: e-resize;
+	}
+	.origin-se {
+		top: 100%;
+		left: 100%;
+		cursor: se-resize;
+	}
+	.origin-s {
+		top: 100%;
+		left: 50%;
+		cursor: s-resize;
+	}
+	.origin-sw {
+		top: 100%;
+		left: 0;
+		cursor: sw-resize;
+	}
+	.origin-w {
+		top: 50%;
+		left: 0;
+		cursor: w-resize;
+	}
+}

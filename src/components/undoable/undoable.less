@@ -1,0 +1,40 @@
+.drag-container {
+	width: 320px;
+	height: 568px;
+	margin: 0 auto;
+	border: 1px solid #d1d1d1;
+	margin-top: 100px;
+	position: relative;
+	.drag-box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100px;
+		height: 100px;
+		background: red;
+		cursor: pointer;
+	}
+	button {
+		position: absolute;
+		right:-100px;
+		border: 0;
+		outline: none;
+		background: #232527;
+		font-size: 14px;
+		width: 100px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		color: #fff;
+		cursor: pointer;
+		&.disabled {
+			background: #838587;
+		}
+	}
+	.undo-btn {
+		bottom: 100px;
+	}
+	.redo-btn {
+		bottom: 50px;
+	}
+}

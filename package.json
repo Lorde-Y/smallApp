@@ -1,0 +1,51 @@
+{
+  "name": "show-small-app",
+  "version": "0.0.1",
+  "description": "write this with React",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lorde-Y/smallApp.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dll": "cd webpack && webpack --config webpack.dll.js",
+    "build": "cd webpack && set NODE_ENV=development&&webpack --watch",
+    "release": "cd webpack && set NODE_ENV=production&&webpack --watch",
+    "server": "cd webpack && set NODE_ENV=development&&webpack-dev-server",
+    "server2": "set NODE_ENV=production&&webpack-dev-server"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-react-transform": "^2.0.0",
+    "babel-preset-stage-0": "^6.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss": "^5.2.4",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^0.13.0",
+    "precss": "^1.4.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "redux": "^3.6.0",
+    "redux-undo": "^0.6.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.15.0",
+    "webpack-hot-middleware": "^2.12.2"
+  }
+}

@@ -1,0 +1,675 @@
+{
+  "id": "3370dd6b-6a1c-40f0-b98e-105343289c4b",
+  "name": "万圣节促销模版",
+  "userid": "f702ce39-0346-4ae5-9b71-fa43c643fc1d",
+  "desc": "适用于万圣节题材商家或超市促销使用",
+  "imgurl": "0a5c6701-0dc1-4935-9bd6-f202eb1b1f80",
+  "state": "1",
+  "statetime": "2016-10-14T02:15:34.000Z",
+  "showviewcount": 1,
+  "comment": 0,
+  "logo": null,
+  "level": "3",
+  "music": "c0e66c9c-595a-4b7d-abe0-54964f519408",
+  "musicname": "BLISS.mp3",
+  "device": "iPhone 5",
+  "width": 320,
+  "height": 504,
+  "in": null,
+  "out": null,
+  "createtime": "2016-10-14T02:03:38.000Z",
+  "updatetime": "2016-10-14T02:15:34.000Z",
+  "shorturl": "y2aY7jO",
+  "reportcount": null,
+  "loop": null,
+  "timeinterval": 0,
+  "company": null,
+  "link": null,
+  "tags": "BLACK;电商;万圣节",
+  "app_title": "微页制作app",
+  "app_praise": 0,
+  "templateid": null,
+  "viewcount": 10,
+  "app_newdata": 0,
+  "app_form_attr": null,
+  "publish": 0,
+  "music_is_auto": 0,
+  "switch_guide": 1,
+  "app_apptitle": null,
+  "app_titles": null,
+  "app_titleshorturl": null,
+  "gather": null,
+  "musiccfg": null,
+  "app_oldformcount": 0,
+  "app_freeformcount": 0,
+  "formdatacount": 0,
+  "bucket": "rabbitpre",
+  "key": "2a79ac49-aac4-4265-93ce-6d11a180b374",
+  "server": "Q",
+  "imgbucket": "rabbitpre",
+  "imgkey": "6531c292-a09c-4c0e-977d-2bfa2f67400d",
+  "imgserver": "A",
+  "logobucket": null,
+  "logokey": null,
+  "logoserver": null,
+  "user_from": "rp",
+  "user_organize": null,
+  "organizationid": null,
+  "pages": [
+    {
+      "id": "c16e487d-98a7-4177-b897-682bcdd09600",
+      "appid": "3370dd6b-6a1c-40f0-b98e-105343289c4b",
+      "row": 0,
+      "col": 0,
+      "in": null,
+      "out": null,
+      "bgcol": null,
+      "bgimage": null,
+      "bgserver": null,
+      "bgleft": 0,
+      "bgtop": 0,
+      "cmps": [
+        {
+          "tid": 1476170713898,
+          "style": {
+            "position": "absolute",
+            "width": 321.5,
+            "height": 609.5,
+            "left": -1,
+            "top": -10,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://oss2.rabbitpre.com/rp/page/index2/img/interact-show.png",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://cdn2.rabbitpre.com/0ce77280-2111-4792-9e98-07a9ec6405f3-7872"
+          },
+          "animation": [],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片01"
+        },
+        {
+          "tid": 1476170713899,
+          "style": {
+            "position": "absolute",
+            "width": 320.5,
+            "height": 544,
+            "left": -0.5,
+            "top": -20,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://wscdn.rabbitpre.com/f5ebc853-e84f-4244-8ec3-4c14eb31b57e-9815",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://wscdn.rabbitpre.com/f5ebc853-e84f-4244-8ec3-4c14eb31b57e-9815"
+          },
+          "animation": [
+            {
+              "name": "fadeIn",
+              "active": true,
+              "delay": 1,
+              "duration": 2
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片02",
+          "visible": true
+        },
+        {
+          "tid": 1476170713900,
+          "style": {
+            "position": "absolute",
+            "width": 18,
+            "height": 2.5,
+            "left": 106,
+            "top": 206,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://cdn3.rabbitpre.com/851f613e-cf16-4bd9-a3e4-b0762d26ff12-0041",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://cdn3.rabbitpre.com/851f613e-cf16-4bd9-a3e4-b0762d26ff12-0041"
+          },
+          "animation": [
+            {
+              "name": "fadeIn",
+              "active": true,
+              "delay": 3
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片03",
+          "visible": true
+        },
+        {
+          "tid": 1476170713901,
+          "style": {
+            "position": "absolute",
+            "width": 18.5,
+            "height": 2.5,
+            "left": 184,
+            "top": 206,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://cdn4.rabbitpre.com/38571493-5cd9-4ed0-afd7-4d366f338804-2858",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://cdn4.rabbitpre.com/38571493-5cd9-4ed0-afd7-4d366f338804-2858"
+          },
+          "animation": [
+            {
+              "name": "fadeIn",
+              "active": true,
+              "delay": 3
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片04",
+          "visible": true
+        },
+        {
+          "tid": 1476170713902,
+          "style": {
+            "position": "absolute",
+            "width": 31,
+            "height": 31,
+            "left": 70.5,
+            "top": 189,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://cdn4.rabbitpre.com/314fba1d-805a-47e5-a053-11dca26d16e7-3844",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://cdn4.rabbitpre.com/314fba1d-805a-47e5-a053-11dca26d16e7-3844"
+          },
+          "animation": [
+            {
+              "name": "bounceInLeft",
+              "active": true,
+              "delay": 2,
+              "duration": 2
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片05"
+        },
+        {
+          "tid": 1476170713903,
+          "style": {
+            "position": "absolute",
+            "width": 31,
+            "height": 31,
+            "left": 205.5,
+            "top": 188.5,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://cdn3.rabbitpre.com/1e3c7ccc-c551-4856-b6bb-8b13e0af226c-3368",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://cdn3.rabbitpre.com/1e3c7ccc-c551-4856-b6bb-8b13e0af226c-3368"
+          },
+          "animation": [
+            {
+              "name": "bounceInRight",
+              "active": true,
+              "delay": 2,
+              "duration": 1
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片06"
+        },
+        {
+          "tid": 1476170713904,
+          "style": {
+            "position": "absolute",
+            "width": 262.5,
+            "height": 154,
+            "left": 58,
+            "top": 353,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://cdn4.rabbitpre.com/ee0e5a57-30c3-400b-ab83-5257ca7cc3e4-6882",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://cdn4.rabbitpre.com/ee0e5a57-30c3-400b-ab83-5257ca7cc3e4-6882"
+          },
+          "animation": [
+            {
+              "name": "bounceInRight",
+              "active": true
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片07"
+        },
+        {
+          "tid": 1476170713905,
+          "style": {
+            "position": "absolute",
+            "width": 320,
+            "height": 112,
+            "left": 0.5,
+            "top": 404,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://cdn4.rabbitpre.com/882ec81a-0825-4899-a26e-27f37079ebbc-7561",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://cdn4.rabbitpre.com/882ec81a-0825-4899-a26e-27f37079ebbc-7561"
+          },
+          "animation": [
+            {
+              "name": "bounceInLeft",
+              "active": true,
+              "delay": 1
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片08",
+          "visible": true
+        },
+        {
+          "tid": 1476170713906,
+          "style": {
+            "width": 62,
+            "font-size": 18,
+            "line-height": 22,
+            "font-family": "黑体",
+            "color": "#666666",
+            "position": "absolute",
+            "left": 135,
+            "top": 198.5,
+            "rotate": 0,
+            "overflow": "hidden",
+            "height": "auto",
+            "transform": "rotate(0deg)"
+          },
+          "text": "<div style=\"color: rgb(255, 128, 0); font-size: 22px;\">地址</div>",
+          "animation": [
+            {
+              "name": "fadeIn",
+              "duration": 1,
+              "active": true,
+              "delay": 3
+            }
+          ],
+          "link": null,
+          "textType": "text",
+          "imageLink": "",
+          "mask": false,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "text",
+          "name": "文字09"
+        },
+        {
+          "tid": 1476170765321,
+          "style": {
+            "width": 241,
+            "font-size": 18,
+            "line-height": 18,
+            "font-family": "黑体",
+            "color": "#666666",
+            "position": "absolute",
+            "left": 49,
+            "top": 248.5,
+            "rotate": 0,
+            "overflow": "hidden",
+            "height": "auto",
+            "transform": "rotate(0deg)"
+          },
+          "text": "<div style=\"color: rgb(255, 128, 0);\">深圳南山区迈科龙大厦XXXX</div>",
+          "animation": [
+            {
+              "name": "fadeInUp",
+              "duration": 1,
+              "active": true,
+              "delay": 4
+            }
+          ],
+          "link": null,
+          "textType": "text",
+          "imageLink": "",
+          "mask": false,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "text",
+          "name": "文字10"
+        },
+        {
+          "tid": 1476171579246,
+          "style": {
+            "position": "absolute",
+            "width": 42.5,
+            "height": 21,
+            "left": -11.5,
+            "top": 53,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://wscdn.rabbitpre.com/3108418c-218c-497a-b6ba-fcea8c0d06af-6223",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://wscdn.rabbitpre.com/3108418c-218c-497a-b6ba-fcea8c0d06af-6223"
+          },
+          "animation": [
+            {
+              "name": "bounceInLeft",
+              "active": true,
+              "delay": 3
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "name": "图片11"
+        },
+        {
+          "tid": 1476171595395,
+          "style": {
+            "position": "absolute",
+            "width": 51.5,
+            "height": 28.5,
+            "left": 250.5,
+            "top": 27.5,
+            "border-radius": 0,
+            "border-width": 0,
+            "border-style": "solid",
+            "rotate": 0,
+            "opacity": 1,
+            "transform": "rotate(0deg)",
+            "border-color": ""
+          },
+          "file": {
+            "key": "http://wscdn.rabbitpre.com/0e790daa-597f-42b3-a533-0312a93cb5a4-0577",
+            "filtereffect": "original",
+            "a": null,
+            "server": "Q",
+            "orikey": "http://wscdn.rabbitpre.com/0e790daa-597f-42b3-a533-0312a93cb5a4-0577"
+          },
+          "animation": [
+            {
+              "name": "bounceInRight",
+              "active": true,
+              "delay": 3
+            }
+          ],
+          "effect": {},
+          "link": null,
+          "remark": {
+            "key": "",
+            "name": ""
+          },
+          "trigger": [
+            {
+              "event": "click",
+              "type": "none",
+              "link": "",
+              "go": "",
+              "toggle": "",
+              "tips": false,
+              "prehide": false
+            }
+          ],
+          "cmpType": "image",
+          "visible": true,
+          "name": "图片12"
+        }
+      ],
+      "createtime": "2016-10-14T02:03:38.000Z",
+      "updatetime": "2016-10-14T02:15:34.000Z"
+    }
+  ],
+  "musicPath": "http://lxcdn.rabbitpre.com/2a79ac49-aac4-4265-93ce-6d11a180b374",
+  "imgPath": "http://tenc1.rabbitpre.com/6531c292-a09c-4c0e-977d-2bfa2f67400d",
+  "app_url": "http://www.rabbitpre.com/m/y2aY7jO"
+}
