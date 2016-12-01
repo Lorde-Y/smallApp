@@ -13,8 +13,8 @@ class ImageCrop extends Component {
 		super(props);
 		this.state = {
 			cropObj:{
-				x:0,
-				y:0,
+				x:0,//最左上角x坐标
+				y:0,//最左上角y坐标
 				width:0,
 				height:0
 			},
@@ -49,6 +49,8 @@ class ImageCrop extends Component {
 		cropObj.y = position.y;
 		cropObj.width = 0;
 		cropObj.height = 0;
+		cropObj.originStartWidth = 0;
+		cropObj.originStartHeight = 0;
 
 		this.setState({showMask: true, dragNewCrop: true, showResizePoint: false,cropObj: cropObj});
 
@@ -78,8 +80,8 @@ class ImageCrop extends Component {
 
 	handleCropResize = (e)=> {
 		Events.pauseEvent(e);
-		const cropObj = this.setCropStateAbs(this.state.cropObj);
-
+		let cropObj = this.setCropStateAbs(this.state.cropObj);
+		cropObj = {...this.state.cropObj, ...cropObj};
 		// start selection drag
 		const cropSelection = ReactDom.findDOMNode(this.refs.cropSelection);
 		const { left, top } = cropSelection.getBoundingClientRect();
@@ -93,10 +95,11 @@ class ImageCrop extends Component {
 
 		const parentContainer = ReactDom.findDOMNode(this);
 		const { left, top } = parentContainer.getBoundingClientRect();
+		const position = Events.getMousePosition(e);
 
 		let cropObj = {};
-		cropObj.x = e.clientX - this.state.dragDisX - left;
-		cropObj.y = e.clientY - this.state.dragDisY - top;
+		cropObj.x = position.x - this.state.dragDisX - left;
+		cropObj.y = position.y - this.state.dragDisY - top;
 		cropObj = {...this.state.cropObj, ...cropObj};
 		this.setState({cropObj: cropObj});
 	};
@@ -105,10 +108,93 @@ class ImageCrop extends Component {
 		Events.removeEventsFromDocument(this.getSelectionDragEventMap())
 	};
 
-	handleNwResize = (e)=> {
+	handleResizeOrigin(disX, disY) {
+		const origin = this.resizeOrigin;
+		let cropObj = {};
+		const {originStartWidth, originStartHeight} = {...this.state.cropObj};
+		switch(origin) {
+			case 'nw'://西北
+				cropObj.x = this.currMouseX + disX;
+				cropObj.y = this.currMouseY + disY;
+				cropObj.width = originStartWidth - disX;
+				cropObj.height = originStartHeight - disY;
+				break;
+			case 'n'://正北
+				cropObj.y = this.currMouseY + disY;
+				cropObj.height = originStartHeight - disY;
+				break;
+			case 'ne'://东北
+				cropObj.y = this.currMouseY + disY;
+				cropObj.width = originStartWidth + disX;
+				cropObj.height = originStartHeight - disY;
+				break;
+			case 'e'://正东
+				cropObj.width = originStartWidth + disX;
+				break;
+			case 'se'://东南
+				cropObj.width = originStartWidth + disX;
+				cropObj.height = originStartHeight + disY;
+				break;
+			case 's'://正南
+				cropObj.height = originStartHeight + disY;
+				break;
+			case 'sw'://西南
+				cropObj.x = this.currMouseX + disX;
+				cropObj.width = originStartWidth - disX;
+				cropObj.height = originStartHeight + disY;
+				break;
+			case 'w'://正西
+				cropObj.x = this.currMouseX + disX;
+				cropObj.width = originStartWidth - disX;
+				break;
+		}
+		return cropObj;
+	}
+
+	handleSelectionResize (origin, e) {
 		Events.pauseEvent(e);
-		console.log('resize...me...')
+		this.resizeOrigin = origin;
+
+		let cropObj = this.setCropStateAbs(this.state.cropObj);
+		cropObj = {...this.state.cropObj, ...cropObj};
+		this.setState({cropObj: cropObj});
+
+		const position = Events.getMousePosition(e);
+		this.currMouseX = position.x;
+		this.currMouseY = position.y;
+
+		Events.addEventsToDocument(this.getSelectionResizeEventMap());
+	}
+
+	handleSelectionResizeMove =(e)=> {
+		Events.pauseEvent(e);
+		const position = Events.getMousePosition(e);
+
+		const disX = position.x - this.currMouseX;
+		const disY = position.y - this.currMouseY;
+
+		let cropObj = this.handleResizeOrigin(disX, disY);
+		cropObj = {...this.state.cropObj, ...cropObj};
+
+		this.setState({cropObj: cropObj});
 	};
+
+	handleSelectionResizeUp =(e)=> {
+		let cropObj = {
+			originStartWidth: Math.abs(this.state.cropObj.width),
+			originStartHeight: Math.abs(this.state.cropObj.height)
+		};
+		cropObj = {...this.state.cropObj, ...cropObj};
+		this.setState({cropObj: cropObj});
+		Events.removeEventsFromDocument(this.getSelectionResizeEventMap());
+	};
+
+	getSelectionResizeEventMap() {
+		return {
+			mousemove: this.handleSelectionResizeMove,
+			mouseup: this.handleSelectionResizeUp
+		}
+	}
 
 	getSelectionDragEventMap() {
 		return {
@@ -121,6 +207,8 @@ class ImageCrop extends Component {
 		const cropObj = this.state.cropObj;
 		cropObj.width =  position.x - cropObj.x;
 		cropObj.height = position.y - cropObj.y;
+		cropObj.originStartWidth = Math.abs(cropObj.width);
+		cropObj.originStartHeight = Math.abs(cropObj.height)
 		this.setState({cropObj: cropObj});
 	}
 
@@ -185,14 +273,14 @@ class ImageCrop extends Component {
 					<div className='image-crop-selection' onMouseDown={this.handleCropResize} style={style} ref="cropSelection">
 						{	this.state.showResizePoint &&
 							<div>
-								<div className='handle-resize origin-nw' onMouseDown={this.handleNwResize}/>
-								<div className='handle-resize origin-n' />
-								<div className='handle-resize origin-ne'/>
-								<div className='handle-resize origin-e'/>
-								<div className='handle-resize origin-se'/>
-								<div className='handle-resize origin-s'/>
-								<div className='handle-resize origin-sw'/>
-								<div className='handle-resize origin-w'/>
+								<div className='handle-resize origin-nw' onMouseDown={this.handleSelectionResize.bind(this, 'nw')}/>
+								<div className='handle-resize origin-n'  onMouseDown={this.handleSelectionResize.bind(this, 'n')}/>
+								<div className='handle-resize origin-ne' onMouseDown={this.handleSelectionResize.bind(this, 'ne')}/>
+								<div className='handle-resize origin-e'  onMouseDown={this.handleSelectionResize.bind(this, 'e')}/>
+								<div className='handle-resize origin-se' onMouseDown={this.handleSelectionResize.bind(this, 'se')}/>
+								<div className='handle-resize origin-s'  onMouseDown={this.handleSelectionResize.bind(this, 's')}/>
+								<div className='handle-resize origin-sw' onMouseDown={this.handleSelectionResize.bind(this, 'sw')}/>
+								<div className='handle-resize origin-w'  onMouseDown={this.handleSelectionResize.bind(this, 'w')}/>
 							</div>
 						}
 					</div>
@@ -202,8 +290,8 @@ class ImageCrop extends Component {
 	}
 
 	render() {
-		console.log('rendering...........');
-		console.log(this.state.cropObj);
+		// console.log('rendering...........');
+		// console.log(this.state.cropObj);
 		const imageMask = this.state.showMask ? 'image-crop-mask active' : 'image-crop-mask';
 		const cropSvgStyle = {
 			WebkitClipPath: this.drawPolygon(),
