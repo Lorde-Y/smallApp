@@ -41,12 +41,13 @@ class ImageCrop extends Component {
 		Events.pauseEvent(e);
 
 		const position = Events.getMousePosition(e);
+		const {left, right, top} = ReactDom.findDOMNode(this).getBoundingClientRect();
 		if (position.x === this.state.x) return;
 
 		let cropObj = {};
 
-		cropObj.x = position.x;
-		cropObj.y = position.y;
+		cropObj.x = position.x -left;
+		cropObj.y = position.y-top;
 		cropObj.width = 0;
 		cropObj.height = 0;
 		cropObj.originStartWidth = 0;
@@ -66,6 +67,8 @@ class ImageCrop extends Component {
 
 	handeMouseMove = (e)=> {
 		this.getDragValue(Events.getMousePosition(e));
+
+		// this.checkCrossOver();
 	};
 
 	handeMouseUp = (e)=> {
@@ -102,6 +105,7 @@ class ImageCrop extends Component {
 		cropObj.y = position.y - this.state.dragDisY - top;
 		cropObj = {...this.state.cropObj, ...cropObj};
 		this.setState({cropObj: cropObj});
+		// this.checkCrossOver();
 	};
 
 	handleSelectionDragUp = (e)=> {
@@ -111,7 +115,9 @@ class ImageCrop extends Component {
 	handleResizeOrigin(disX, disY) {
 		const origin = this.resizeOrigin;
 		let cropObj = {};
-		const {originStartWidth, originStartHeight} = {...this.state.cropObj};
+		console.log('handleing...resize...');
+		const {originStartWidth, originStartHeight, height} = {...this.state.cropObj};
+		console.log(originStartHeight, height)
 		switch(origin) {
 			case 'nw'://西北
 				cropObj.x = this.currMouseX + disX;
@@ -120,8 +126,10 @@ class ImageCrop extends Component {
 				cropObj.height = originStartHeight - disY;
 				break;
 			case 'n'://正北
+				// cropObj.x = this.currMouseX - disX
 				cropObj.y = this.currMouseY + disY;
 				cropObj.height = originStartHeight - disY;
+				cropObj.originStartWidth = originStartHeight - disY;
 				break;
 			case 'ne'://东北
 				cropObj.y = this.currMouseY + disY;
@@ -162,21 +170,25 @@ class ImageCrop extends Component {
 		const position = Events.getMousePosition(e);
 		this.currMouseX = position.x;
 		this.currMouseY = position.y;
-
+		console.log(position);
 		Events.addEventsToDocument(this.getSelectionResizeEventMap());
 	}
 
 	handleSelectionResizeMove =(e)=> {
 		Events.pauseEvent(e);
 		const position = Events.getMousePosition(e);
-
+		console.log(position)
+		const {left, top} = ReactDom.findDOMNode(this).getBoundingClientRect();
 		const disX = position.x - this.currMouseX;
 		const disY = position.y - this.currMouseY;
-
+		console.log(disX, disY);
+		if (disX===0 && disY === 0) return;
 		let cropObj = this.handleResizeOrigin(disX, disY);
 		cropObj = {...this.state.cropObj, ...cropObj};
 
 		this.setState({cropObj: cropObj});
+
+		// this.checkCrossOver();
 	};
 
 	handleSelectionResizeUp =(e)=> {
@@ -201,6 +213,40 @@ class ImageCrop extends Component {
 			mousemove: this.handleSelectionDragMove,
 			mouseup: this.handleSelectionDragUp
 		}
+	}
+
+	checkCrossOver() {
+		let cropObj = Object.assign({},this.state.cropObj);
+		console.log('check..crosso..over..');
+		console.log(cropObj)
+		// console.log(ReactDom.findDOMNode(this).getBoundingClientRect());
+		const {width, height} = ReactDom.findDOMNode(this).getBoundingClientRect();
+		//check left
+		if (cropObj.x <= 0) {
+			cropObj.x = 0;
+		}
+		//check right
+		if ((cropObj.x + cropObj.originStartWidth) > width) {
+			console.log('over....');
+			cropObj.x = width - cropObj.originStartWidth;
+			cropObj.width = width - cropObj.x;
+			cropObj.originStartWidth = width - cropObj.x;
+		}
+		//check top
+		if (cropObj.y <= 0) {
+			cropObj.y = 0;
+		}
+		//check bottom
+		if ((cropObj.y + cropObj.originStartHeight) > height) {
+			console.log('over....');
+			cropObj.y = height - cropObj.originStartHeight;
+			cropObj.height = height - cropObj.y;
+			cropObj.originStartHeight = height - cropObj.y;
+		}
+		cropObj = {...this.state.cropObj, ...cropObj};
+		console.log('final....obj.');
+		console.log(cropObj);
+		return this.setState({cropObj: cropObj});
 	}
 
 	getDragValue(position) {
@@ -290,8 +336,8 @@ class ImageCrop extends Component {
 	}
 
 	render() {
-		// console.log('rendering...........');
-		// console.log(this.state.cropObj);
+		console.log('rendering...........');
+		console.log(this.state.cropObj);
 		const imageMask = this.state.showMask ? 'image-crop-mask active' : 'image-crop-mask';
 		const cropSvgStyle = {
 			WebkitClipPath: this.drawPolygon(),

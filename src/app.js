@@ -8,6 +8,7 @@ import Innerpage from 'components/innerpage';
 import Attribute from 'components/attribute';
 import AttributePanel from 'components/attributepanel';
 import TextAttribute from './components/attribute/textattribute';
+import Pickcolor from 'components/colorpicker';
 
 //start ...undo redo...
 import Undoable from 'components/undoable';
@@ -32,6 +33,6 @@ import './styles/common.less';
 import ImageCrop from 'components/crop';
 // end image crop
 ReactDom.render(
-	<ImageCrop fuck='you'/>,
+	<Pickcolor fuck='you'/>,
 	document.getElementById('app')
 );

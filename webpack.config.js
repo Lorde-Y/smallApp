@@ -34,7 +34,7 @@ module.exports = {
 	// 因此很多同学使用webpack-dev-server进行开发的时候都看不到编译后的文件
 	// 如果出现Uncaught Error: [HMR] Hot Module Replacement is disabled.记得在plugins加上new webpack.HotModuleReplacementPlugin()
 	devServer: {
-		port: 8080,
+		port: 7070,
 		contentBase: './build', //定义静态服务器的根路径，要把index.html放入编译后的目录下，即./build 
 		hot: true,
 		inline: true,

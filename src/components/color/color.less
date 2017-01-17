@@ -1,0 +1,84 @@
+.color-panel {
+	padding-top: 7px;
+}
+.saturation-block {
+	position: relative;
+	width: 220px;
+	height: 117px;
+	// margin: 0 auto;
+	div {
+		border-radius: 6px;
+	}
+}
+.color-setting {
+	margin-top: 12px;
+	margin-left: 3px;
+	height: 40px;
+	.current-color {
+		width: 36px;
+		height: 36px;
+		margin-right: 15px;
+		border-radius: 4px;
+	}
+	.color-slider {
+		position: relative;
+		width: 165px;
+		height: 10px;
+		div {
+			border-radius: 5px;
+		}
+		.hue-picker {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.pointer {
+		position: absolute;
+		top: -2px;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background: #fff;
+	}
+}
+.color-block {
+	position: relative;
+	.default-color {
+		margin-top: 19px;
+		margin-bottom: 5px;
+	}
+	.white-black-color {
+		margin-left: 22px;
+	}
+	.prohibit-color {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		float: left;
+		width: 22px;
+		height: 22px;
+		cursor: pointer;
+		background: #fff;
+		overflow: hidden;
+		.line {
+			position: absolute;
+			left: -3px;
+			top: 10px;
+			width: 30px;
+			height: 1px;
+			background: #ff5656;
+			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+	}
+	.bg-grid {
+		width: 100%;
+		overflow: hidden;
+		li {
+			float: left;
+			width: 22px;
+			height: 22px;
+			cursor: pointer;
+		}
+	}
+}

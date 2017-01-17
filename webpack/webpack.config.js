@@ -119,7 +119,7 @@ module.exports = {
 	],
 
 	devServer: {
-		port: 8080,
+		port: 7070,
 		contentBase: '../build', //定义静态服务器的基路径 
 		hot: true,
 		inline: true,
