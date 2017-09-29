@@ -33,6 +33,6 @@ import './styles/common.less';
 import ImageCrop from 'components/crop';
 // end image crop
 ReactDom.render(
-	<Pickcolor fuck='you'/>,
+	<Pickcolor hello='world'/>,
 	document.getElementById('app')
 );
